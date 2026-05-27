@@ -7,6 +7,8 @@
   home.homeDirectory = "/Users/mizunofukusayou";
 
   imports = [
+    ./modules/allowUnfree.nix
+
     ./git/git.nix
 ];
 
