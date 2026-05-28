@@ -156,7 +156,7 @@
         # jnoortheen.nix-ideの設定
         "nix" = {
           # フォーマッタ
-          "formatterPath" = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
+          "formatterPath" = "${pkgs.nixfmt}/bin/nixfmt";
           # エラーチェック
           "serverPath" = "${pkgs.nixd}/bin/nixd";
         };
