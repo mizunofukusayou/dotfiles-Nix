@@ -16,6 +16,8 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      formatter.${system} = pkgs.nixfmt-tree;
+
       homeConfigurations."mizunofukusayou" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home-manager/home.nix ];
