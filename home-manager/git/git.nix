@@ -9,5 +9,9 @@
       };
       init.defaultBranch = "main";
     };
+    ignores = [
+      ".DS_Store"
+      "*.swp"
+    ];
   };
 }
