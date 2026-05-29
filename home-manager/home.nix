@@ -17,6 +17,7 @@
   home.packages = with pkgs; [
     nixd
     nixfmt
+    brave
   ];
 
   programs.home-manager.enable = true;

@@ -47,6 +47,7 @@ in
       minimize-to-application = true; # ウィンドウをアプリケーションアイコンに格納
       persistent-apps = [
         # ドックに常に表示するアプリ
+        "${hmApps}/Brave Browser.app"
         "${hmApps}/Visual Studio Code.app"
         "${hmApps}/WezTerm.app"
       ];
