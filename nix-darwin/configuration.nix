@@ -10,6 +10,7 @@
     ./system.nix
     ./keymap.nix
     ./home_manager.nix
+    ./homebrew.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
