@@ -88,7 +88,8 @@ in
       };
       "com.apple.Spotlight" = {
         PasteboardHistoryEnabled = 1; # Spotlightのペーストボード履歴を有効化
-        EnabledPreferenceRules = [ # Spotlightの検索対象から除外する項目
+        EnabledPreferenceRules = [
+          # Spotlightの検索対象から除外する項目
           "com.apple.AppStore"
           "com.apple.iCal"
           "com.apple.shortcuts"
