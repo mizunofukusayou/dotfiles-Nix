@@ -27,6 +27,7 @@ in
       "com.apple.keyboard.fnState" = true; # F1-F12キーをファンクションキーとして使用
       # UI
       AppleInterfaceStyle = "Dark"; # ダークモードを有効化
+      AppleIconAppearanceTheme = "RegularDark"; # アイコンの外観をダークモードに設定
     };
     # Finder
     finder = {
