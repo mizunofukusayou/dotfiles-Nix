@@ -64,7 +64,10 @@ in
         "${apps.hm}/WezTerm.app"
         "${apps.local}/traQ.app"
       ];
-      persistent-others = [ ]; # ドックの右側に常に表示する項目（仕切り線の後ろ）
+      persistent-others = [
+        # ドックの後半に表示する項目（仕切り線の後ろ）
+        "${apps.sys}/Utilities/Activity Monitor.app"
+      ];
     };
     # 画面キャプチャ
     screencapture = {
