@@ -2,8 +2,13 @@
 let
   user = "mizunofukusayou";
   homeDir = "/Users/${user}";
-  hmApps = "${homeDir}/Applications/Home Manager Apps";
-  Apps = "${homeDir}/Applications";
+
+  apps = {
+    sys = "/System/Applications";
+    global = "/Applications";
+    local = "${homeDir}/Applications";
+    hm = "${homeDir}/Applications/Home Manager Apps";
+  };
 in
 {
   # Macのユーザー設定を変更する際に必要
@@ -54,10 +59,10 @@ in
       minimize-to-application = true; # ウィンドウをアプリケーションアイコンに格納
       persistent-apps = [
         # ドックに常に表示するアプリ
-        "${hmApps}/Brave Browser.app"
-        "${hmApps}/Visual Studio Code.app"
-        "${hmApps}/WezTerm.app"
-        "${Apps}/traQ.app"
+        "${apps.hm}/Brave Browser.app"
+        "${apps.hm}/Visual Studio Code.app"
+        "${apps.hm}/WezTerm.app"
+        "${apps.local}/traQ.app"
       ];
       persistent-others = [ ]; # ドックの右側に常に表示する項目（仕切り線の後ろ）
     };
