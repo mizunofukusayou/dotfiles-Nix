@@ -54,6 +54,7 @@ in
         "${hmApps}/WezTerm.app"
         "${Apps}/traQ.app"
       ];
+      persistent-others = [ ]; # ドックの右側に常に表示する項目（仕切り線の後ろ）
     };
     # 画面キャプチャ
     screencapture = {
