@@ -9,5 +9,6 @@
 
     ./system.nix
     ./keymap.nix
+    ./home_manager.nix
   ];
 }

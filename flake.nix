@@ -28,13 +28,11 @@
     {
       formatter.${system} = pkgs.nixfmt-tree;
 
-      homeConfigurations."mizunofukusayou" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./home-manager/home.nix ];
-      };
-
       darwinConfigurations."mizunofukusayounoMacBook-Air" = nix-darwin.lib.darwinSystem {
-        modules = [ ./nix-darwin/configuration.nix ];
+        modules = [
+          ./nix-darwin/configuration.nix
+          home-manager.darwinModules.home-manager
+        ];
       };
     };
 }

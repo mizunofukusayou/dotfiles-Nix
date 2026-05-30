@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "mizunofukusayou";
-  home.homeDirectory = "/Users/mizunofukusayou";
-
   imports = [
     ./modules/allowUnfree.nix
 
