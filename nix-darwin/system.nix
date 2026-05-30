@@ -1,7 +1,6 @@
-{ ... }:
+{ config, ... }:
 let
-  user = "mizunofukusayou";
-  homeDir = "/Users/${user}";
+  homeDir = config.users.users.${config.myEnv.name}.home;
 
   apps = {
     sys = "/System/Applications";
@@ -12,7 +11,7 @@ let
 in
 {
   # Macのユーザー設定を変更する際に必要
-  system.primaryUser = "${user}";
+  system.primaryUser = config.myEnv.name;
 
   # タッチIDでsudoを許可する
   security.pam.services.sudo_local.touchIdAuth = true;

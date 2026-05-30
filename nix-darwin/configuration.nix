@@ -5,6 +5,8 @@
   nix.enable = false;
 
   imports = [
+    ./modules/env.nix
+
     ./system.nix
     ./keymap.nix
   ];
