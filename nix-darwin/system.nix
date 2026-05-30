@@ -29,15 +29,20 @@ in
       # UI
       AppleInterfaceStyle = "Dark"; # ダークモードを有効化
       AppleIconAppearanceTheme = "RegularDark"; # アイコンの外観をダークモードに設定
+      # Finder
+      AppleShowAllExtensions = true; # ファイル拡張子を常に表示
     };
     # Finder
     finder = {
-      AppleShowAllExtensions = true; # ファイル拡張子を常に表示
       AppleShowAllFiles = true; # 隠しファイルを表示
       FXDefaultSearchScope = "SCcf"; # 検索範囲をカレントフォルダに設定
       ShowPathbar = true; # パスバーを表示
+      _FXShowPosixPathInTitle = true; # タイトルバーにPOSIXパスを表示
       FXEnableExtensionChangeWarning = false; # ファイル拡張子変更の警告を無効化
       FXPreferredViewStyle = "clmv"; # デフォルトの表示方法をカラムビューに設定
+      NewWindowTarget = "Other"; # 新しいFinderウィンドウの表示場所を`NewWindowTargetPath`に設定
+      NewWindowTargetPath = "file://${homeDir}/Downloads/";
+      FXRemoveOldTrashItems = true; # ゴミ箱に入れてから30日後に自動的に削除
     };
     # Dock
     dock = {
