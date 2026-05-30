@@ -1,10 +1,5 @@
 { pkgs, ... }:
 {
-  my.allowUnfree = [
-    "vscode"
-    "vscode-extension-ms-vscode-cpptools"
-    "vscode-extension-MS-python-vscode-pylance"
-  ];
   programs.vscode = {
     enable = true;
 

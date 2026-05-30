@@ -11,4 +11,6 @@
     ./keymap.nix
     ./home_manager.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
 }

@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ./modules/allowUnfree.nix
-
     ./git/git.nix
     ./vscode/vscode.nix
     ./shell/shell.nix
