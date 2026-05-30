@@ -1,13 +1,16 @@
 { lib, config, ... }:
+let
+  userName = "mizunofukusayou";
+in
 {
   options.myEnv = {
     name = lib.mkOption {
       type = lib.types.str;
-      default = "mizunofukusayou";
+      default = userName;
     };
   };
 
   config = {
-    users.users.${config.myEnv.name}.home = "/Users/${config.myEnv.name}";
+    users.users.${userName}.home = "/Users/${userName}";
   };
 }
