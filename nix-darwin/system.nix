@@ -87,6 +87,25 @@ in
         AppleMenuBarVisibleInFullscreen = 1; # フルスクリーン時にメニューバーを表示
         AutoHideMenuBarOption = 3; # メニューバーの自動非表示をしない
       };
+      "com.apple.Spotlight" = {
+        PasteboardHistoryEnabled = 1; # Spotlightのペーストボード履歴を有効化
+        EnabledPreferenceRules = [ # Spotlightの検索対象から除外する項目
+          "com.apple.AppStore"
+          "com.apple.iCal"
+          "com.apple.shortcuts"
+          "com.apple.tips"
+          "com.apple.iBooksX"
+          "com.apple.VoiceMemos"
+          "com.apple.podcasts"
+          "com.apple.mail"
+          "com.apple.MobileSMS"
+          "com.apple.Notes"
+          "com.apple.reminders"
+          "com.apple.Photos"
+          "com.apple.mobilephone"
+          "com.apple.AddressBook"
+        ];
+      };
     };
   };
 
