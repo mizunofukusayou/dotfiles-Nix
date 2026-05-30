@@ -3,6 +3,7 @@ let
   user = "mizunofukusayou";
   homeDir = "/Users/${user}";
   hmApps = "${homeDir}/Applications/Home Manager Apps";
+  Apps = "${homeDir}/Applications";
 in
 {
   # Macのユーザー設定を変更する際に必要
@@ -51,6 +52,7 @@ in
         "${hmApps}/Brave Browser.app"
         "${hmApps}/Visual Studio Code.app"
         "${hmApps}/WezTerm.app"
+        "${Apps}/traQ.app"
       ];
     };
     # 画面キャプチャ
