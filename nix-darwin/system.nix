@@ -10,11 +10,9 @@ let
   };
 in
 {
-  # Macのユーザー設定を変更する際に必要
-  system.primaryUser = config.myEnv.name;
+  system.primaryUser = config.myEnv.name; # Macのユーザー設定を変更する際に必要
 
-  # タッチIDでsudoを許可する
-  security.pam.services.sudo_local.touchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true; # タッチIDでsudoを許可する
 
   system.defaults = {
     NSGlobalDomain = {

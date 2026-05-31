@@ -3,14 +3,9 @@
   programs.zsh = {
     enable = true;
 
-    # 補完を有効にする
-    enableCompletion = true;
-
-    # シンタックスハイライトを有効にする
-    syntaxHighlighting.enable = true;
-
-    # 入力補完を有効にする
-    autosuggestion.enable = true;
+    enableCompletion = true; # 補完を有効にする
+    syntaxHighlighting.enable = true; # シンタックスハイライトを有効にする
+    autosuggestion.enable = true; # 入力補完を有効にする
 
     # コマンド履歴の設定
     history = {
