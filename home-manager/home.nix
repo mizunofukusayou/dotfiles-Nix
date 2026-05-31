@@ -14,6 +14,7 @@
     nixd
     nixfmt
     brave
+    go-task
   ];
 
   programs.home-manager.enable = true;

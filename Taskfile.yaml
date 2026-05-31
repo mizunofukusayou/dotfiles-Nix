@@ -1,0 +1,23 @@
+version: "3"
+
+tasks:
+  switch:
+    desc: Switch environment
+    platforms: [linux/amd64, darwin/arm64]
+    cmds:
+      - cmd: home-manager switch --flake .
+        platforms: [linux/amd64]
+      - cmd: sudo darwin-rebuild switch --flake .
+        platforms: [darwin/arm64]
+
+  update:
+    desc: Update pkgs
+    cmds:
+      - cmd: nix flake update nixpkgs
+      - cmd: echo "Update complete, run 'task switch' to switch"
+
+  clean:
+    desc: Clean up old generations and GC
+    cmds:
+      - cmd: nix-collect-garbage --delete-older-than 30d
+      - cmd: sudo nix-collect-garbage --delete-older-than 30d

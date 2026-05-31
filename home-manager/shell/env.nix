@@ -13,9 +13,7 @@
   };
 
   home.shellAliases = {
-    nix-clean = "home-manager expire-generations '-30 days' && nix profile wipe-history --older-than 30d && nix store gc";
-    switch-nix-darwin = "sudo darwin-rebuild switch --flake .";
-    switch-home-manager = "home-manager switch --flake .";
     dr = "defaults read";
+    yy = "pbcopy";
   };
 }
