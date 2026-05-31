@@ -2,6 +2,7 @@
 {
   programs.vscode = {
     enable = true;
+    mutableExtensionsDir = false; # 拡張機能のインストール先をNixストア内にする(GUIから拡張機能をインストール不可に)
 
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
@@ -53,6 +54,12 @@
         # ==========================================
         # Nix言語
         jnoortheen.nix-ide
+
+        # ==========================================
+        # 言語サポート: YAML
+        # ==========================================
+        # YAML
+        redhat.vscode-yaml
       ];
 
       userSettings = {
@@ -118,6 +125,15 @@
           "formatterPath" = "${pkgs.nixfmt}/bin/nixfmt"; # フォーマッタ
           "serverPath" = "${pkgs.nixd}/bin/nixd"; # エラーチェック
         };
+
+        "[yaml]" = {
+          "editor.tabSize" = 2; # YAMLファイルのインデントをスペース2つに
+          "prettier.tabWidth" = 2; # YAMLファイルのインデントをスペース2つに
+        };
+
+        # redhat.vscode-yamlの設定
+        "yaml.format.enable" = false; # redhat.vscode-yamlのフォーマットを無効化
+        "redhat.telemetry.enabled" = false; # redhat.vscode-yamlの情報提供の無効化
 
         "telemetry.telemetryLevel" = "off"; # 情報提供の無効化
 
