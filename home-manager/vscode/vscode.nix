@@ -39,6 +39,7 @@
         ms-vscode.cmake-tools
         ms-vscode.cpptools
         ms-vscode.cpptools-extension-pack
+        vadimcn.vscode-lldb # MacOSでcppdbgを使用するとlldb-miniがメモリリークを起こすため、lldbを使用する
 
         # ==========================================
         # 言語サポート: Python & Jupyter
