@@ -11,12 +11,19 @@
   home.stateVersion = "26.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
+    # Core CLI & Utilities
+    go-task
+
+    # Languages & Toolchains
+    go
+    python313
+
+    # LSPs & Formatters
     nixd
     nixfmt
+
+    # GUI Applications
     brave
-    go-task
-    python313
-    go
   ];
 
   programs.home-manager.enable = true;
