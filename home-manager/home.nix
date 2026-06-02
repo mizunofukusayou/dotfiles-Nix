@@ -15,6 +15,7 @@
     nixfmt
     brave
     go-task
+    python313
   ];
 
   programs.home-manager.enable = true;
