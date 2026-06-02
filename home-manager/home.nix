@@ -16,6 +16,7 @@
     brave
     go-task
     python313
+    go
   ];
 
   programs.home-manager.enable = true;
