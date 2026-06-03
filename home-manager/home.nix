@@ -21,9 +21,6 @@
     # LSPs & Formatters
     nixd
     nixfmt
-
-    # GUI Applications
-    brave
   ];
 
   programs.home-manager.enable = true;
