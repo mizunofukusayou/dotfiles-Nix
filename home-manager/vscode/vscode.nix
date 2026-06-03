@@ -16,7 +16,6 @@
         # ユーティリティ・プレビュー
         # ==========================================
         esbenp.prettier-vscode # コードの自動整形
-        formulahendry.code-runner # 実行ボタン
         # google.gemini-cli-vscode-ide-companion # gemini-cliにカレントディレクトリを渡す
         ms-vscode.live-server # HTMLをvscode上でプレビューする
         shd101wyy.markdown-preview-enhanced # Markdownのプレビューを強化、pdf出力を可能に
@@ -67,9 +66,7 @@
           "autoSave" = "afterDelay"; # 一定時間（デフォルト1秒）後にファイルを自動保存する
           "defaultLanguage" = "markdown"; # 新規ファイルのデフォルト言語をMarkdownに設定
         };
-
-        "code-runner.runInTerminal" = true; # Code Runner: 実行結果を出力タブではなく、ターミナルに表示する
-
+        
         "explorer" = {
           "confirmDelete" = false; # ファイル削除時の確認ダイアログを非表示にする
           "confirmDragAndDrop" = false; # ファイルのドラッグ＆ドロップ移動時の確認を非表示にする
