@@ -16,7 +16,6 @@
 
     # Languages & Toolchains
     go
-    python313
 
     # LSPs & Formatters
     nixd
