@@ -78,6 +78,7 @@
           "*" = true;
           "plaintext" = false;
           "scminput" = false;
+          "markdown" = true;
         };
 
         "git" = {
