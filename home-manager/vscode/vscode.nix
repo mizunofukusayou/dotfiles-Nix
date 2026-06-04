@@ -17,7 +17,6 @@
         # ==========================================
         esbenp.prettier-vscode # コードの自動整形
         # google.gemini-cli-vscode-ide-companion # gemini-cliにカレントディレクトリを渡す
-        ms-vscode.live-server # HTMLをvscode上でプレビューする
         shd101wyy.markdown-preview-enhanced # Markdownのプレビューを強化、pdf出力を可能に
 
         # ==========================================
