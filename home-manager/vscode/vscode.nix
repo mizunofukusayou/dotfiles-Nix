@@ -65,7 +65,7 @@
           "autoSave" = "afterDelay"; # 一定時間（デフォルト1秒）後にファイルを自動保存する
           "defaultLanguage" = "markdown"; # 新規ファイルのデフォルト言語をMarkdownに設定
         };
-        
+
         "explorer" = {
           "confirmDelete" = false; # ファイル削除時の確認ダイアログを非表示にする
           "confirmDragAndDrop" = false; # ファイルのドラッグ＆ドロップ移動時の確認を非表示にする
@@ -110,7 +110,15 @@
 
         "prettier.tabWidth" = 4; # インデントをスペース4つに
 
-        "[c]"."editor.defaultFormatter" = "ms-vscode.cpptools"; # C/C++ファイルのデフォルトフォーマッタを設定
+        "[c][cpp]"."editor.defaultFormatter" = "ms-vscode.cpptools"; # C/C++ファイルのデフォルトフォーマッタを設定
+        "C_Cpp.clang_format_style" =
+          "{"
+          + "BasedOnStyle: Google," # ベースとしてGoogleのコーディングスタイルを使用する
+          + "BreakBeforeBraces: Attach," # 波括弧 '{' を改行せず、関数やif文などと同じ行の末尾に配置する
+          + "IndentWidth: 4," # インデントの幅を4つにする
+          + "AllowShortIfStatementsOnASingleLine: Always," # 短いif文を1行にまとめる
+          + "AllowShortLoopsOnASingleLine: true," # 短いループ文を1行にまとめる
+          + "}";
 
         "[nix]" = {
           "editor.defaultFormatter" = "jnoortheen.nix-ide"; # Nixファイルのデフォルトフォーマッタを設定
