@@ -104,6 +104,9 @@ in
           "com.apple.AddressBook"
         ];
       };
+      "com.apple.finder" = {
+        "_FXEnableColumnAutoSizing" = true; # finderのカラム幅を自動調整する
+      };
     };
   };
 
