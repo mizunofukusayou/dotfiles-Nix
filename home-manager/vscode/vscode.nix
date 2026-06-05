@@ -118,6 +118,7 @@
           + "IndentWidth: 4," # インデントの幅を4つにする
           + "AllowShortIfStatementsOnASingleLine: Always," # 短いif文を1行にまとめる
           + "AllowShortLoopsOnASingleLine: true," # 短いループ文を1行にまとめる
+          + "ColumnLimit: 0," # 行の長さ制限を無効にする
           + "}";
 
         "[nix]" = {
