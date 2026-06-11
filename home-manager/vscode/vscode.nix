@@ -64,6 +64,8 @@
         "files" = {
           "autoSave" = "afterDelay"; # 一定時間（デフォルト1秒）後にファイルを自動保存する
           "defaultLanguage" = "markdown"; # 新規ファイルのデフォルト言語をMarkdownに設定
+          "insertFinalNewline" = true; # ファイルの最後に自動で改行を入れる
+          "trimFinalNewlines" = true; # ファイルの最後の複数の改行を1つにする
         };
 
         "explorer" = {
