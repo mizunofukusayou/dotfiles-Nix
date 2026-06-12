@@ -73,6 +73,8 @@
           "confirmDragAndDrop" = false; # ファイルのドラッグ＆ドロップ移動時の確認を非表示にする
         };
 
+        "workbench.startupEditor" = "none"; # 起動時に`ようこそ`を表示しないようにする
+
         "terminal.integrated.enableMultiLinePasteWarning" = "never"; # ターミナルに複数行を貼り付ける際の警告を無効にする
 
         # GitHub Copilot: 有効化/無効化
