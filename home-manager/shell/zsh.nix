@@ -7,6 +7,13 @@
     syntaxHighlighting.enable = true; # シンタックスハイライトを有効にする
     autosuggestion.enable = true; # 入力補完を有効にする
 
+    # 履歴の部分一致検索を有効にする
+    historySubstringSearch = {
+      enable = true;
+      searchUpKey = [ "^j" ]; # 上矢印キー
+      searchDownKey = [ "^k" ]; # 下矢印キー
+    };
+
     # コマンド履歴の設定
     history = {
       size = 50000;
