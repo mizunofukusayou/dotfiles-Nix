@@ -96,8 +96,8 @@
 
         # Markdown Preview Enhanced: プレビューのテーマ設定
         "markdown-preview-enhanced" = {
-          "previewTheme" = "atom-dark.css";
-          "codeBlockTheme" = "auto.css";
+          "previewTheme" = "github-light.css"; # プレビューのテーマをGitHub風にする
+          "printBackground" = true; # PDF出力時に背景を印刷する(コードブロックの背景や水平線を表示)
         };
 
         "go.toolsManagement.autoUpdate" = true; # Go: エラーチェック用のツール群の自動アップデートを有効化
