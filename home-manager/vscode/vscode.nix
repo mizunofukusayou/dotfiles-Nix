@@ -18,6 +18,7 @@
         esbenp.prettier-vscode # コードの自動整形
         # google.gemini-cli-vscode-ide-companion # gemini-cliにカレントディレクトリを渡す
         shd101wyy.markdown-preview-enhanced # Markdownのプレビューを強化、pdf出力を可能に
+        tomoki1207.pdf # PDFのプレビューを可能にする
 
         # ==========================================
         # 言語サポート: C/C++
