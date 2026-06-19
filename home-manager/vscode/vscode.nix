@@ -62,17 +62,13 @@
       ];
 
       userSettings = {
-        "files" = {
-          "autoSave" = "afterDelay"; # 一定時間（デフォルト1秒）後にファイルを自動保存する
-          "defaultLanguage" = "markdown"; # 新規ファイルのデフォルト言語をMarkdownに設定
-          "insertFinalNewline" = true; # ファイルの最後に自動で改行を入れる
-          "trimFinalNewlines" = true; # ファイルの最後の複数の改行を1つにする
-        };
+        "files.autoSave" = "afterDelay"; # 一定時間（デフォルト1秒）後にファイルを自動保存する
+        "files.defaultLanguage" = "markdown"; # 新規ファイルのデフォルト言語をMarkdownに設定
+        "files.insertFinalNewline" = true; # ファイルの最後に自動で改行を入れる
+        "files.trimFinalNewlines" = true; # ファイルの最後の複数の改行を1つにする
 
-        "explorer" = {
-          "confirmDelete" = false; # ファイル削除時の確認ダイアログを非表示にする
-          "confirmDragAndDrop" = false; # ファイルのドラッグ＆ドロップ移動時の確認を非表示にする
-        };
+        "explorer.confirmDelete" = false; # ファイル削除時の確認ダイアログを非表示にする
+        "explorer.confirmDragAndDrop" = false; # ファイルのドラッグ＆ドロップ移動時の確認を非表示にする
 
         "workbench.startupEditor" = "none"; # 起動時に`ようこそ`を表示しないようにする
 
@@ -86,32 +82,26 @@
           "markdown" = true;
         };
 
-        "git" = {
-          "confirmSync" = false; # 同期（push/pull）時の確認をスキップ
-          "autofetch" = true; # 定期的にリモートの変更を自動でチェックする
-          "enableSmartCommit" = true; # ステージング済みのファイルがない場合、全変更をコミットする
-        };
+        "git.confirmSync" = false; # 同期（push/pull）時の確認をスキップ
+        "git.autofetch" = true; # 定期的にリモートの変更を自動でチェックする
+        "git.enableSmartCommit" = true; # ステージング済みのファイルがない場合、全変更をコミットする
 
         "diffEditor.ignoreTrimWhitespace" = true; # 差分表示（Diff）で、行末などの空白の違いを無視する
 
         # Markdown Preview Enhanced: プレビューのテーマ設定
-        "markdown-preview-enhanced" = {
-          "previewTheme" = "github-light.css"; # プレビューのテーマをGitHub風にする
-          "printBackground" = true; # PDF出力時に背景を印刷する(コードブロックの背景や水平線を表示)
-        };
+        "markdown-preview-enhanced.previewTheme" = "github-light.css"; # プレビューのテーマをGitHub風にする
+        "markdown-preview-enhanced.printBackground" = true; # PDF出力時に背景を印刷する(コードブロックの背景や水平線を表示)
 
         "go.toolsManagement.autoUpdate" = true; # Go: エラーチェック用のツール群の自動アップデートを有効化
 
         "github.copilot.nextEditSuggestions.enabled" = true; # GitHub Copilot: 次の編集候補（Next Edit Suggestions）を有効化
 
-        "editor" = {
-          "fontSize" = 18; # エディタのフォントサイズ
-          "tabSize" = 4; # エディタのタブ幅を4スペースに設定
-          "codeActionsOnSave"."source.organizeImports" = "always"; # 保存時にインポートを自動で整理する設定
-          "insertSpaces" = true; # Tabキーでタブ文字の代わりにスペースを入力
-          "formatOnSave" = true; # 保存時に自動でコードを整える設定
-          "defaultFormatter" = "esbenp.prettier-vscode"; # Prettierをフォーマッターに使うよう指定
-        };
+        "editor.fontSize" = 18; # エディタのフォントサイズ
+        "editor.tabSize" = 4; # エディタのタブ幅を4スペースに設定
+        "editor.codeActionsOnSave"."source.organizeImports" = "always"; # 保存時にインポートを自動で整理する設定
+        "editor.insertSpaces" = true; # Tabキーでタブ文字の代わりにスペースを入力
+        "editor.formatOnSave" = true; # 保存時に自動でコードを整える設定
+        "editor.defaultFormatter" = "esbenp.prettier-vscode"; # Prettierをフォーマッターに使うよう指定
 
         "prettier.tabWidth" = 4; # インデントをスペース4つに
 
@@ -132,10 +122,8 @@
         };
 
         # jnoortheen.nix-ideの設定
-        "nix" = {
-          "formatterPath" = "${pkgs.nixfmt}/bin/nixfmt"; # フォーマッタ
-          "serverPath" = "${pkgs.nixd}/bin/nixd"; # エラーチェック
-        };
+        "nix.formatterPath" = "nixfmt"; # フォーマッタ
+        "nix.serverPath" = "${pkgs.nixd}/bin/nixd"; # エラーチェック
 
         "[yaml]" = {
           "editor.tabSize" = 2; # YAMLファイルのインデントをスペース2つに
