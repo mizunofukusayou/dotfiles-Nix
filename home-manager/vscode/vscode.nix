@@ -71,6 +71,12 @@
         "explorer.confirmDragAndDrop" = false; # ファイルのドラッグ＆ドロップ移動時の確認を非表示にする
 
         "workbench.startupEditor" = "none"; # 起動時に`ようこそ`を表示しないようにする
+        "workbench.editor.wrapTabs" = true; # タブを多段表示
+        "workbench.sideBar.location" = "right"; # サイドバーを右に配置
+        "workbench.statusBar.visible" = false; # ステータスバーを非表示にする
+        "workbench.activityBar.location" = "top"; # サイドバーのアイコンを上に(サイドバー非表示に共に非表示に)
+        "editor.minimap.enabled" = false; # ミニマップを非表示にする
+        "window.customTitleBarVisibility" = "windowed"; # 全画面表示でタイトルバーを非表示にする
 
         "terminal.integrated.enableMultiLinePasteWarning" = "never"; # ターミナルに複数行を貼り付ける際の警告を無効にする
 
