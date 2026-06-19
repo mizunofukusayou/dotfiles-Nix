@@ -121,6 +121,7 @@
           + "AllowShortLoopsOnASingleLine: true," # 短いループ文を1行にまとめる
           + "ColumnLimit: 0," # 行の長さ制限を無効にする
           + "}";
+        "debug.onTaskErrors" = "showErrors"; # コンパイル時にポップアップが表示されないようにする
 
         "[nix]" = {
           "editor.defaultFormatter" = "jnoortheen.nix-ide"; # Nixファイルのデフォルトフォーマッタを設定
