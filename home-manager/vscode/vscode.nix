@@ -41,6 +41,7 @@
 
         ms-toolsai.jupyter # ipynbをVSCodeで動かすための拡張機能
         ms-toolsai.jupyter-renderers # ipynbファイルで、セルの下にグラフを表示するように
+        google.colab # Google Colabの環境で動かせるように
 
         # ==========================================
         # 言語サポート: Go
@@ -142,6 +143,7 @@
         "redhat.telemetry.enabled" = false; # redhat.vscode-yamlの情報提供の無効化
 
         "telemetry.telemetryLevel" = "off"; # 情報提供の無効化
+        "colab.logging.level" = "off"; # Google Colabの情報提供の無効化
 
         "update.mode" = "none"; # VSCodeからのシステムの変更を無効化
       };
