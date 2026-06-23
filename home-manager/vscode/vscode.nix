@@ -60,6 +60,24 @@
         # ==========================================
         # YAML
         redhat.vscode-yaml
+
+        # ==========================================
+        # 言語サポート: MATLAB
+        # ==========================================
+        (pkgs.vscode-utils.extensionFromVscodeMarketplace {
+          name = "language-matlab";
+          publisher = "mathworks";
+          version = "1.3.12";
+          sha256 = "sha256-1KKlkTlesZllNyEz4fdQiQjSTZqjsvf7OEDhgFlgXC8";
+        })
+
+        # formatter
+        (pkgs.vscode-utils.extensionFromVscodeMarketplace {
+          name = "matlab-formatter";
+          publisher = "affenwiesel";
+          version = "2.11.0";
+          sha256 = "sha256-a62ybp0hctBOQo/f8iXFpCcv5o63tN4l4d5wvhZ+hEU";
+        })
       ];
 
       userSettings = {
@@ -146,6 +164,11 @@
         "colab.logging.level" = "off"; # Google Colabの情報提供の無効化
 
         "update.mode" = "none"; # VSCodeからのシステムの変更を無効化
+
+        "MATLAB.showFeatureNotAvailableError" = false; # matlabがインストールされていない時の警告を非表示に
+        "[matlab]" = {
+          "editor.defaultFormatter" = "AffenWiesel.matlab-formatter"; # `affenwiesel.matlab-formatter`をフォーマッターに
+        };
       };
     };
   };
