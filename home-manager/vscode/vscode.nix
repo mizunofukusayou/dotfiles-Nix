@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   programs.vscode = {
     enable = true;
@@ -169,6 +169,7 @@
         "[matlab]" = {
           "editor.defaultFormatter" = "AffenWiesel.matlab-formatter"; # `affenwiesel.matlab-formatter`をフォーマッターに
         };
+        "MATLAB.installPath" = "${config.home.homeDirectory}/Applications/MATLAB_R2026a.app"; # MATLABのインストールパスを指定
       };
     };
   };
