@@ -174,6 +174,10 @@
           "editor.defaultFormatter" = "AffenWiesel.matlab-formatter"; # `affenwiesel.matlab-formatter`をフォーマッターに
         };
         "MATLAB.installPath" = "${config.home.homeDirectory}/Applications/MATLAB_R2026a.app"; # MATLABのインストールパスを指定
+        "terminal.integrated.commandsToSkipShell" = [
+          "matlab.interrupt"
+        ];
+        "MATLAB.telemetry" = false; # MATLABの情報提供を無効化
       };
     };
   };
