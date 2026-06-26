@@ -141,6 +141,10 @@
           + "ColumnLimit: 0," # 行の長さ制限を無効にする
           + "}";
         "debug.onTaskErrors" = "showErrors"; # コンパイル時にポップアップが表示されないようにする
+        "files.exclude" = {
+          "**/*.out" = true; # コンパイル時に生成される.outファイルを非表示にする
+          "**/*.dSYM" = true; # デバッグ時に生成される.dSYMディレクトリを非表示にする
+        };
 
         "[nix]" = {
           "editor.defaultFormatter" = "jnoortheen.nix-ide"; # Nixファイルのデフォルトフォーマッタを設定
