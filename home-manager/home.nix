@@ -16,6 +16,7 @@
 
     # Languages & Toolchains
     go
+    temurin-bin # Java
 
     # LSPs & Formatters
     nixd

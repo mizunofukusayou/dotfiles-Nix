@@ -1,5 +1,5 @@
 # 環境変数、パスの追加、エイリアスなど、シェルの環境をカスタマイズする
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   xdg.enable = true;
 
@@ -10,6 +10,8 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
+    JAVA_HOME = "${pkgs.temurin-bin.home}";
+    MATLAB_JAVA = "$JAVA_HOME";
   };
 
   home.shellAliases = {
