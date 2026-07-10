@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     # Core CLI & Utilities
     go-task
+    tree
 
     # Languages & Toolchains
     go
