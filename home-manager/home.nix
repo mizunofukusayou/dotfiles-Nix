@@ -14,6 +14,7 @@
     # Core CLI & Utilities
     go-task
     tree
+    poppler-utils # PDFをsvgに変換する
 
     # Languages & Toolchains
     go
