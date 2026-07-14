@@ -117,7 +117,7 @@
         "markdown-preview-enhanced.previewTheme" = "github-light.css"; # プレビューのテーマをGitHub風にする
         "markdown-preview-enhanced.printBackground" = true; # PDF出力時に背景を印刷する(コードブロックの背景や水平線を表示)
         "markdown-preview-enhanced.scrollSync" = false; # プレビューとエディタのスクロールを同期しない
-        "markdown-preview-enhanced.mathRenderingOption" = "MathJax"; # 数式のレンダリングにMathJaxを使用する
+        # "markdown-preview-enhanced.mathRenderingOption" = "MathJax"; # 数式のレンダリングにMathJaxを使用する
 
         "go.toolsManagement.autoUpdate" = true; # Go: エラーチェック用のツール群の自動アップデートを有効化
 
