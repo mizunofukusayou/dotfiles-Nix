@@ -1,0 +1,4 @@
+{"title": "Nix: writeShellApplication テンプレート", "code": "pkgs.writeShellApplication {\n    name = \"my-script\";\n    runtimeInputs = with pkgs; [ ];\n    text = ''\n        echo \"hello\"\n    '';\n}"}
+{"title": "JS: アロー関数の即時関数 (IIFE)", "code": "(() => {\n    console.log(\"Hello\");\n})();"}
+{"title": "Docker: 未使用リソースの完全削除", "code": "docker system prune -a --volumes --force"}
+{"title": "Markdown: MathJax の数式表示", "code": "---\nmathRenderingOption: \"MathJax\"\n---"}
