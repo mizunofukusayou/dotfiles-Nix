@@ -46,7 +46,11 @@
       # 入力ファイル名から拡張子（.pdfなど）を取り除く（例: input.pdf -> input）
       local base_name="''${1%.*}"
 
-      pdftocairo -svg -f "$2" -l "$2" "$1" "$base_name-$2.svg"
+      # 出力ディレクトリを作成する（存在しない場合）
+      mkdir -p "$base_name"
+
+      # pdftocairoコマンドを使って指定ページをSVGに変換する
+      pdftocairo -svg -f "$2" -l "$2" "$1" "$base_name/$2.svg"
       }
     '';
   };
