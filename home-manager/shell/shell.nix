@@ -6,5 +6,6 @@
     ./wezterm.nix
     ./zsh.nix
     ./pdf2svg.nix
+    ./atcoder.nix
   ];
 }
