@@ -14,4 +14,6 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+
+  nix.settings.auto-optimise-store = true; # ハードリンクでストアを最適化する
 }
