@@ -30,28 +30,5 @@
       "NO_BEEP"
       "CORRECT"
     ];
-
-    # pdftocairoを使ってPDFの特定ページをSVGに変換する関数
-    initContent = ''
-      # PDFの特定ページをSVGに変換する関数
-      # 使い方: pdf2svg <入力ファイル> <ページ番号>
-      # 例: pdf2svg input.pdf 3  ->  input-3.svg が生成される
-      pdf2svg() {
-        if [ "$#" -ne 2 ]; then
-          echo "ユーザーエラー: 引数の数が足りません。"
-          echo "使い方: pdf2svg <入力ファイル> <ページ番号>"
-          return 1
-        fi
-
-      # 入力ファイル名から拡張子（.pdfなど）を取り除く（例: input.pdf -> input）
-      local base_name="''${1%.*}"
-
-      # 出力ディレクトリを作成する（存在しない場合）
-      mkdir -p "$base_name"
-
-      # pdftocairoコマンドを使って指定ページをSVGに変換する
-      pdftocairo -svg -f "$2" -l "$2" "$1" "$base_name/$2.svg"
-      }
-    '';
   };
 }
