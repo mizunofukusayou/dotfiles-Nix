@@ -19,6 +19,7 @@
         # google.gemini-cli-vscode-ide-companion # gemini-cliにカレントディレクトリを渡す
         shd101wyy.markdown-preview-enhanced # Markdownのプレビューを強化、pdf出力を可能に
         tomoki1207.pdf # PDFのプレビューを可能にする
+        hediet.vscode-drawio # Draw.io
 
         # ==========================================
         # 言語サポート: C/C++
@@ -180,6 +181,9 @@
           "matlab.interrupt"
         ];
         "MATLAB.telemetry" = false; # MATLABの情報提供を無効化
+
+        # hediet.vscode-drawioの設定
+        "hediet.vscode-drawio.resizeImages" = null; # Draw.ioで画像をリサイズする際のデフォルトの幅と高さを指定する
       };
     };
   };
