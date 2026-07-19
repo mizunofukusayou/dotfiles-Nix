@@ -6,5 +6,6 @@
     ./pdf2svg.nix
     ./atcoder.nix
     ./snippets.nix
+    ./latex-to-sympy.nix
   ];
 }
