@@ -77,7 +77,8 @@ in
         # 3. コピーの確認
         while :; do
             printf "Copy LaTeX expression to clipboard? (y/n): "
-            read -r CONFIRM < /dev/tty
+            read -r -n 1 CONFIRM < /dev/tty
+            echo ""
 
             case "$CONFIRM" in
                 [yY])
