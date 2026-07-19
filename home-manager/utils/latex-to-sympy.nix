@@ -1,8 +1,7 @@
+# default.nix または home-manager の設定ファイル
 { pkgs, ... }:
 let
-  # latex2sympy2 (1.9.1) は antlr4-python3-runtime==4.7.2 に固定で依存している。
-  # nixpkgs 同梱の antlr4-python3-runtime はもっと新しいバージョン(生成パーサーの
-  # シリアライズ形式が違う)なので、互換性のため 4.7.2 を自前でビルドする。
+  # antlr4-python3-runtime-472 の定義はそのまま維持
   antlr4-python3-runtime-472 = pkgs.python3Packages.buildPythonPackage rec {
     pname = "antlr4-python3-runtime";
     version = "4.7.2";
@@ -11,8 +10,6 @@ let
       inherit pname version;
       sha256 = "168cdcec8fb9152e84a87ca6fd261b3d54c8f6358f42ab3b813b14a7193bb50b";
     };
-    # `typing.io` は Python 3.13 で削除された。TextIO は typing 本体に
-    # 定義されているため、素直に typing からインポートするよう修正する。
     postPatch = ''
       substituteInPlace src/antlr4/Lexer.py \
         --replace-fail "from typing.io import TextIO" "from typing import TextIO"
@@ -22,8 +19,7 @@ let
     doCheck = false;
   };
 
-  # latex2sympy2 は nixpkgs に存在せず、PyPI 上には wheel しか配布されていないため
-  # wheel を直接取得してパッケージ化する。
+  # latex2sympy2 の定義はそのまま維持
   latex2sympy2 = pkgs.python3Packages.buildPythonPackage rec {
     pname = "latex2sympy2";
     version = "1.9.1";
@@ -39,9 +35,11 @@ let
     doCheck = false;
   };
 
+  # 【修正】ps.matplotlib を追加
   pythonEnv = pkgs.python3.withPackages (ps: [
     latex2sympy2
     ps.sympy
+    ps.matplotlib
   ]);
 
   latexToSympyScript = ./latex-to-sympy.py;
@@ -51,7 +49,8 @@ in
     (pkgs.writeShellApplication {
       name = "latex-to-sympy";
 
-      runtimeInputs = [ pythonEnv ];
+      # 【修正】runtimeInputs に pkgs.wezterm を追加
+      runtimeInputs = [ pythonEnv pkgs.wezterm ];
 
       text = ''
         if [ "$#" -gt 0 ]; then
