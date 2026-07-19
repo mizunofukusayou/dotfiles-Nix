@@ -52,29 +52,48 @@ in
       runtimeInputs = [
         pythonEnv
         pkgs.wezterm
-        pkgs.gnused
+        pkgs.gnused # バイナリを壊さず安全に切り出すために gnused を追加
       ];
 
       text = ''
-        # 1. ユーザーからの入力を取得
         if [ "$#" -gt 0 ]; then
             INPUT="$1"
         else
             INPUT=$(cat)
         fi
 
-        # 2. Pythonの全出力を一度一時ファイル（または変数）に受ける
-        # バイナリが含まれるため、安易に変数展開せず一時ファイルを使うのが安全です
         TMP_OUT=$(mktemp)
         trap 'rm -f "$TMP_OUT"' EXIT
 
         printf "%s\n" "$INPUT" | python3 ${latexToSympyScript} > "$TMP_OUT"
 
-        # 3. テキスト部分（デリミタの前まで）をターミナルに表示
-        sed '/---PNG_START---/,$d' "$TMP_OUT"
+        # 1. デリミタの直前まで（数式テキスト）を抽出して表示・格納
+        LATEX_EXPR=$(sed '/---PNG_START---/,$d' "$TMP_OUT")
+        printf "%s\n" "$LATEX_EXPR"
 
-        # 4. バイナリ部分（デリミタの後ろ）だけを wezterm imgcat に流し込む
+        # 2. デリミタの直後から（PNGバイナリ）を imgcat に流し込む
         sed '1,/---PNG_START---/d' "$TMP_OUT" | wezterm imgcat
+
+        # 3. コピーの確認
+        while :; do
+            printf "Copy LaTeX expression to clipboard? (y/n): "
+            read -r CONFIRM < /dev/tty
+
+            case "$CONFIRM" in
+                [yY])
+                    printf "%s" "$LATEX_EXPR" | pbcopy
+                    echo "Copied to clipboard!"
+                    break
+                    ;;
+                [nN])
+                    echo "Canceled."
+                    break
+                    ;;
+                *)
+                    echo "Invalid input. Please enter 'y' or 'n'."
+                    ;;
+            esac
+        done
       '';
     })
   ];
