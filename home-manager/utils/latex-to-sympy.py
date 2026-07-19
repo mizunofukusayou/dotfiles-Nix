@@ -18,7 +18,7 @@ def generate_latex_png_bytes(latex_str):
     ax.text(0.5, 0.5, f"${latex_str}$", size=font_size, ha='center', va='center', color='white')
     
     buf = io.BytesIO()
-    plt.savefig(buf, format='png', dpi=300, bbox_inches='tight', pad_inches=0.3, transparent=True)
+    plt.savefig(buf, format='png', dpi=300, bbox_inches='tight', pad_inches=0, transparent=True)
     plt.close(fig)
     return buf.getvalue()
 
