@@ -38,12 +38,16 @@ let
     ps.matplotlib
   ]);
 
-  latexToSympyScript = ./latex-to-sympy.py;
+  latexToSympyScript = ./simplify.py;
 in
 {
+  home.shellAliases = {
+    "sim" = "simplify";
+  };
+
   home.packages = [
     (pkgs.writeShellApplication {
-      name = "latex-to-sympy";
+      name = "simplify";
 
       runtimeInputs = [
         pythonEnv
