@@ -49,15 +49,32 @@ in
     (pkgs.writeShellApplication {
       name = "latex-to-sympy";
 
-      # 【修正】runtimeInputs に pkgs.wezterm を追加
-      runtimeInputs = [ pythonEnv pkgs.wezterm ];
+      runtimeInputs = [
+        pythonEnv
+        pkgs.wezterm
+        pkgs.gnused
+      ];
 
       text = ''
+        # 1. ユーザーからの入力を取得
         if [ "$#" -gt 0 ]; then
-            printf "%s\n" "$1"
+            INPUT="$1"
         else
-            cat
-        fi | python3 ${latexToSympyScript}
+            INPUT=$(cat)
+        fi
+
+        # 2. Pythonの全出力を一度一時ファイル（または変数）に受ける
+        # バイナリが含まれるため、安易に変数展開せず一時ファイルを使うのが安全です
+        TMP_OUT=$(mktemp)
+        trap 'rm -f "$TMP_OUT"' EXIT
+
+        printf "%s\n" "$INPUT" | python3 ${latexToSympyScript} > "$TMP_OUT"
+
+        # 3. テキスト部分（デリミタの前まで）をターミナルに表示
+        sed '/---PNG_START---/,$d' "$TMP_OUT"
+
+        # 4. バイナリ部分（デリミタの後ろ）だけを wezterm imgcat に流し込む
+        sed '1,/---PNG_START---/d' "$TMP_OUT" | wezterm imgcat
       '';
     })
   ];
