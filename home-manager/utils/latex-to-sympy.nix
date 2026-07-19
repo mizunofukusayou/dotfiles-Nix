@@ -1,7 +1,5 @@
-# default.nix または home-manager の設定ファイル
 { pkgs, ... }:
 let
-  # antlr4-python3-runtime-472 の定義はそのまま維持
   antlr4-python3-runtime-472 = pkgs.python3Packages.buildPythonPackage rec {
     pname = "antlr4-python3-runtime";
     version = "4.7.2";
@@ -19,7 +17,6 @@ let
     doCheck = false;
   };
 
-  # latex2sympy2 の定義はそのまま維持
   latex2sympy2 = pkgs.python3Packages.buildPythonPackage rec {
     pname = "latex2sympy2";
     version = "1.9.1";
@@ -35,7 +32,6 @@ let
     doCheck = false;
   };
 
-  # 【修正】ps.matplotlib を追加
   pythonEnv = pkgs.python3.withPackages (ps: [
     latex2sympy2
     ps.sympy
@@ -52,7 +48,7 @@ in
       runtimeInputs = [
         pythonEnv
         pkgs.wezterm
-        pkgs.gnused # バイナリを壊さず安全に切り出すために gnused を追加
+        pkgs.gnused
       ];
 
       text = ''
@@ -81,6 +77,7 @@ in
 
             case "$CONFIRM" in
                 [yY])
+                    # 注意: Linux環境等で利用する場合は`pbcopy`の差し替えが必要です。
                     printf "%s" "$LATEX_EXPR" | pbcopy
                     echo "Copied to clipboard!"
                     break
