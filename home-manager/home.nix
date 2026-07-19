@@ -14,6 +14,7 @@
     # Core CLI & Utilities
     go-task
     tree
+    keepassxc # ローカルパスワード管理
 
     # Languages & Toolchains
     go
