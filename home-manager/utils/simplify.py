@@ -1,6 +1,9 @@
 import io
 import sys
 
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from latex2sympy2 import latex2sympy
 from sympy import I, Symbol, simplify
