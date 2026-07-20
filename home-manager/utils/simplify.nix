@@ -6,7 +6,7 @@ let
     format = "setuptools";
     src = pkgs.python3Packages.fetchPypi {
       inherit pname version;
-      sha256 = "168cdcec8fb9152e84a87ca6fd261b3d54c8f6358f42ab3b813b14a7193bb50b";
+      hash = "sha256-Fozc7I+5FS6EqHym/SYbPVTI9jWPQqs7gTsUpxk7tQs=";
     };
     postPatch = ''
       substituteInPlace src/antlr4/Lexer.py \
@@ -23,7 +23,7 @@ let
     format = "wheel";
     src = pkgs.fetchurl {
       url = "https://files.pythonhosted.org/packages/0c/9e/4520682ab29a9219f1845643fdc75f1453bebf4b602c6e4421579de1f05d/latex2sympy2-1.9.1-py3-none-any.whl";
-      sha256 = "44f24d263d235164a91173167a30d449f4360e3f0a59239ce6b843c50a41c601";
+      hash = "sha256-RPJNJj0jUWSpEXMWejDUSfQ2Dj8KWSOc5rhDxQpBxgE=";
     };
     propagatedBuildInputs = [
       pkgs.python3Packages.sympy
