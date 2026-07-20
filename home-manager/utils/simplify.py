@@ -1,24 +1,37 @@
-import sys
 import io
+import sys
+
 import matplotlib.pyplot as plt
 from latex2sympy2 import latex2sympy
-from sympy import simplify, I, Symbol
+from sympy import I, Symbol, simplify
 from sympy.printing import latex
+
 
 def generate_latex_png_bytes(latex_str):
     calc_width = max(8.0, min(20.0, len(latex_str) / 12.0))
     calc_height = 3.0 if "\\frac" in latex_str else 1.8
 
     fig, ax = plt.subplots(figsize=(calc_width, calc_height))
-    ax.axis('off')
+    ax.axis("off")
 
     font_size = 26 if len(latex_str) > 80 else 32
-    ax.text(0.5, 0.5, f"${latex_str}$", size=font_size, ha='center', va='center', color='white')
+    ax.text(
+        0.5,
+        0.5,
+        f"${latex_str}$",
+        size=font_size,
+        ha="center",
+        va="center",
+        color="white",
+    )
 
     buf = io.BytesIO()
-    plt.savefig(buf, format='png', dpi=300, bbox_inches='tight', pad_inches=0, transparent=True)
+    plt.savefig(
+        buf, format="png", dpi=300, bbox_inches="tight", pad_inches=0, transparent=True
+    )
     plt.close(fig)
     return buf.getvalue()
+
 
 def process_latex_expression(latex_str):
     raw_expr = latex2sympy(latex_str)
@@ -40,22 +53,20 @@ def process_latex_expression(latex_str):
     elif latex_real == "0":
         latex_output = f"j {latex_imag}"
     else:
-        if '+' in latex_imag or '-' in latex_imag:
+        if "+" in latex_imag or "-" in latex_imag:
             latex_output = f"{latex_real} + j \\left({latex_imag}\\right)"
         else:
             latex_output = f"{latex_real} + j {latex_imag}"
 
-    output = (
-        f"{latex_output}\n"
-        f"---PNG_START---\n"
-    )
+    output = f"{latex_output}\n---PNG_START---\n"
 
     # LaTeX式を書き込む
-    sys.stdout.buffer.write(output.encode('utf-8'))
+    sys.stdout.buffer.write(output.encode("utf-8"))
 
     # PNGバイナリを書き込む
     png_bytes = generate_latex_png_bytes(latex_output)
     sys.stdout.buffer.write(png_bytes)
+
 
 if __name__ == "__main__":
     inp = sys.stdin.read().strip()
