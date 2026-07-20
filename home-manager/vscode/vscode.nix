@@ -100,6 +100,7 @@
         "window.customTitleBarVisibility" = "windowed"; # 全画面表示でタイトルバーを非表示にする
 
         "terminal.integrated.enableMultiLinePasteWarning" = "never"; # ターミナルに複数行を貼り付ける際の警告を無効にする
+        "terminal.integrated.enableImages" = true; # ターミナルで画像を表示を可能に
 
         # GitHub Copilot: 有効化/無効化
         "github.copilot.enable" = {
