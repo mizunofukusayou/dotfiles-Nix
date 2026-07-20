@@ -52,6 +52,7 @@ in
       runtimeInputs = [
         pythonEnv
         pkgs.wezterm
+        pkgs.coreutils
       ];
 
       text = ''
