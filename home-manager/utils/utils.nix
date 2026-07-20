@@ -6,5 +6,6 @@
     ./pdf2svg.nix
     ./atcoder.nix
     ./snippets.nix
+    ./simplify.nix
   ];
 }
