@@ -42,10 +42,12 @@ def process_latex_expression(latex_str):
     raw_expr = raw_expr.subs(j_subs)
     real_vars = {sym: Symbol(sym.name, real=True) for sym in raw_expr.free_symbols}
     full_expr = raw_expr.subs(real_vars)
-    simplified_expr = simplify(full_expr)
 
     # 実部と虚部に分解
-    real_part, imag_part = simplified_expr.as_real_imag()
+    real_part, imag_part = full_expr.as_real_imag()
+
+    real_part = simplify(real_part)
+    imag_part = simplify(imag_part)
 
     # 虚部が 0 の時は実部のみ、それ以外は X + jY の形にする
     if imag_part == 0:
