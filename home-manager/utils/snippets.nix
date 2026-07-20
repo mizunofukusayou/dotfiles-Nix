@@ -21,16 +21,14 @@
             exit 1
         fi
 
-        # 1. fzf の一覧には「タイトル」だけを表示させる
-        # 2. 選択されたタイトルの行から、jq を使って生の「コード（改行も保持）」を抽出する
         selected_title=$(jq -r '.title' "$SNIPPET_FILE" | fzf --prompt="Select Snippet: ")
 
         if [ -n "$selected_title" ]; then
-            # 一致するタイトルの code フィールドを生テキスト（-r）として取得
-            # 改行コード（\n）はここで本物の改行に自動展開されます
-            jq -r --arg title "$selected_title" 'select(.title == $title) .code' "$SNIPPET_FILE" | pbcopy
-            
-            echo "Copied to clipboard!"
+            # 注意: Linux環境等で利用する場合は`pbcopy`の差し替えが必要です。
+            selected_code=$(jq -r --arg title "$selected_title" 'select(.title == $title) .code' "$SNIPPET_FILE")
+
+            echo "$selected_code"
+            echo "$selected_code" | pbcopy
         fi
       '';
     })
