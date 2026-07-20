@@ -57,6 +57,23 @@ config.keys = {
   -- ペインを閉じる
   -- Cmd + x で現在のペインを閉じる
   { key = 'x', mods = 'CMD', action = wezterm.action.CloseCurrentPane { confirm = true } },
+
+  -- Cmd + y で現在のペインの最後の出力をクリップボードにコピー
+  {
+    key = 'y',
+    mods = 'CMD',
+    action = wezterm.action_callback(function(window, pane)
+      local zones = pane:get_semantic_zones('Output')
+      if #zones == 0 then
+        return
+      end
+      local last_zone = zones[#zones]
+      local text = pane:get_text_from_semantic_zone(last_zone)
+      if text then
+        window:copy_to_clipboard(text, 'Clipboard')
+      end
+    end),
+  },
 }
 
 return config
