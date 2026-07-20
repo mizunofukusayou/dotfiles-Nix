@@ -43,6 +43,7 @@
         ms-toolsai.jupyter # ipynbをVSCodeで動かすための拡張機能
         ms-toolsai.jupyter-renderers # ipynbファイルで、セルの下にグラフを表示するように
         google.colab # Google Colabの環境で動かせるように
+        charliermarsh.ruff # Formatter & Linter
 
         # ==========================================
         # 言語サポート: Go
@@ -181,6 +182,14 @@
           "matlab.interrupt"
         ];
         "MATLAB.telemetry" = false; # MATLABの情報提供を無効化
+
+        "[python]" = {
+          "editor.defaultFormatter" = "charliermarsh.ruff"; # `charliermarsh.ruff`をフォーマッターに
+          "editor.codeActionsOnSave" = {
+            "source.fixAll.ruff" = "explicit"; # Lintエラーの自動修正
+            "source.organizeImports.ruff" = "explicit"; # インポートの自動整理
+          };
+        };
 
         # hediet.vscode-drawioの設定
         "hediet.vscode-drawio.resizeImages" = null; # Draw.ioで画像をリサイズする際のデフォルトの幅と高さを指定する
