@@ -23,6 +23,10 @@ let
   };
 in
 {
+  home.shellAliases = {
+    "p2s" = "pdf2svg";
+  };
+
   home.packages = [
     pdf2svg
   ];

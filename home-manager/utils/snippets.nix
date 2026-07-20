@@ -1,9 +1,14 @@
 { pkgs, config, ... }:
 {
   xdg.configFile."snippets.jsonl".source = ./snippets.jsonl;
+
+  home.shellAliases = {
+    "sn" = "snippets";
+  };
+
   home.packages = [
     (pkgs.writeShellApplication {
-      name = "sn";
+      name = "snippets";
 
       runtimeInputs = with pkgs; [
         fzf
