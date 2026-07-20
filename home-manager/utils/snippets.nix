@@ -1,7 +1,5 @@
 { pkgs, config, ... }:
 {
-  xdg.configFile."snippets.jsonl".source = ./snippets.jsonl;
-
   home.shellAliases = {
     "sn" = "snippets";
   };
@@ -16,7 +14,7 @@
       ];
 
       text = ''
-        SNIPPET_FILE="${config.xdg.configHome}/snippets.jsonl"
+        SNIPPET_FILE="${config.xdg.configHome}/snippets/snippets.jsonl"
 
         if [ ! -f "$SNIPPET_FILE" ]; then
             echo "Error: Snippet file not found at $SNIPPET_FILE" >&2
