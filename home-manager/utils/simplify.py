@@ -50,16 +50,16 @@ def process_latex_expression(latex_str):
     latex_real = latex(real_part)
     latex_imag = latex(imag_part)
 
+    if "+" in latex_imag or "-" in latex_imag:
+        latex_imag = f"\\left({latex_imag}\\right)"
+
     # 虚部が 0 の時は実部のみ、それ以外は X + jY の形にする
     if latex_imag == "0":
         latex_output = latex_real
     elif latex_real == "0":
         latex_output = f"j {latex_imag}"
     else:
-        if "+" in latex_imag or "-" in latex_imag:
-            latex_output = f"{latex_real} + j \\left({latex_imag}\\right)"
-        else:
-            latex_output = f"{latex_real} + j {latex_imag}"
+        latex_output = f"{latex_real} + j {latex_imag}"
 
     output = f"{latex_output}\n---PNG_START---\n"
 
