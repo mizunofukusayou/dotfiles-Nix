@@ -47,19 +47,20 @@ def process_latex_expression(latex_str):
     # 実部と虚部に分解
     real_part, imag_part = simplified_expr.as_real_imag()
 
-    latex_real = latex(real_part)
-    latex_imag = latex(imag_part)
-
-    if "+" in latex_imag or "-" in latex_imag:
-        latex_imag = f"\\left({latex_imag}\\right)"
-
     # 虚部が 0 の時は実部のみ、それ以外は X + jY の形にする
-    if latex_imag == "0":
-        latex_output = latex_real
-    elif latex_real == "0":
-        latex_output = f"j {latex_imag}"
+    if imag_part == 0:
+        latex_output = latex(real_part)
     else:
-        latex_output = f"{latex_real} + j {latex_imag}"
+        latex_real = latex(real_part)
+        latex_imag = latex(imag_part)
+
+        if "+" in latex_imag or "-" in latex_imag:
+            latex_imag = f"\\left({latex_imag}\\right)"
+
+        if real_part == 0:
+            latex_output = f"j {latex_imag}"
+        else:
+            latex_output = f"{latex_real} + j {latex_imag}"
 
     # LaTeX式を書き込む (errors on stderr; LaTeX is written to a dedicated FD when provided)
     import os
