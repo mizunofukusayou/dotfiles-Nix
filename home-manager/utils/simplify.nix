@@ -65,7 +65,11 @@ in
         TMP_TXT=$(mktemp)
         trap 'rm -f "$TMP_TXT"' EXIT
 
-        printf "%s\n" "$INPUT" | python3 ${latexToSympyScript} 2> "$TMP_TXT" | wezterm imgcat
+        set -o pipefail
+        if ! printf "%s\n" "$INPUT" | SIMPLIFY_LATEX_FD=3 python3 ${latexToSympyScript} 3> "$TMP_TXT" | wezterm imgcat; then
+            echo "Error: failed to simplify LaTeX expression." >&2
+            exit 1
+        fi
 
         LATEX_EXPR=$(cat "$TMP_TXT")
         printf "%s\n" "$LATEX_EXPR"

@@ -61,9 +61,18 @@ def process_latex_expression(latex_str):
     else:
         latex_output = f"{latex_real} + j {latex_imag}"
 
-    # LaTeX式を書き込む
-    sys.stderr.buffer.write(latex_output.encode("utf-8"))
+    # LaTeX式を書き込む (errors on stderr; LaTeX is written to a dedicated FD when provided)
+    import os
 
+    latex_fd = int(os.environ.get("SIMPLIFY_LATEX_FD", "2"))
+    if latex_fd == 2:
+        latex_out = sys.stderr.buffer
+    elif latex_fd == 1:
+        latex_out = sys.stdout.buffer
+    else:
+        latex_out = os.fdopen(latex_fd, "wb", closefd=False)
+
+    latex_out.write((latex_output + "\n").encode("utf-8"))
     # PNGバイナリを書き込む
     png_bytes = generate_latex_png_bytes(latex_output)
     sys.stdout.buffer.write(png_bytes)
