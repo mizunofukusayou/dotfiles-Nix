@@ -52,7 +52,6 @@ in
       runtimeInputs = [
         pythonEnv
         pkgs.wezterm
-        pkgs.gnused
       ];
 
       text = ''
@@ -62,17 +61,13 @@ in
             INPUT=$(cat)
         fi
 
-        TMP_OUT=$(mktemp)
-        trap 'rm -f "$TMP_OUT"' EXIT
+        TMP_TXT=$(mktemp)
+        trap 'rm -f "$TMP_TXT"' EXIT
 
-        printf "%s\n" "$INPUT" | python3 ${latexToSympyScript} > "$TMP_OUT"
+        printf "%s\n" "$INPUT" | python3 ${latexToSympyScript} 2> "$TMP_TXT" | wezterm imgcat
 
-        # 1. デリミタの直前まで（数式テキスト）を抽出して表示・格納
-        LATEX_EXPR=$(sed '/---PNG_START---/,$d' "$TMP_OUT")
+        LATEX_EXPR=$(cat "$TMP_TXT")
         printf "%s\n" "$LATEX_EXPR"
-
-        # 2. デリミタの直後から（PNGバイナリ）を imgcat に流し込む
-        sed '1,/---PNG_START---/d' "$TMP_OUT" | wezterm imgcat
 
         # 3. コピーの確認
         while :; do

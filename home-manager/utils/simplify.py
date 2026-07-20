@@ -61,10 +61,8 @@ def process_latex_expression(latex_str):
     else:
         latex_output = f"{latex_real} + j {latex_imag}"
 
-    output = f"{latex_output}\n---PNG_START---\n"
-
     # LaTeX式を書き込む
-    sys.stdout.buffer.write(output.encode("utf-8"))
+    sys.stderr.buffer.write(latex_output.encode("utf-8"))
 
     # PNGバイナリを書き込む
     png_bytes = generate_latex_png_bytes(latex_output)
