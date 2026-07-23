@@ -17,5 +17,6 @@
   home.shellAliases = {
     dr = "defaults read";
     yy = "pbcopy";
+    diff = "code -d";
   };
 }
