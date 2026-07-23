@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./fd.nix
     ./fzf.nix
     ./ghq.nix
     ./pdf2svg.nix

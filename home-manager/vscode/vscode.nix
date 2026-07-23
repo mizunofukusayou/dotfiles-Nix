@@ -101,6 +101,7 @@
 
         "terminal.integrated.enableMultiLinePasteWarning" = "never"; # ターミナルに複数行を貼り付ける際の警告を無効にする
         "terminal.integrated.enableImages" = true; # ターミナルで画像を表示を可能に
+        "terminal.integrated.macOptionIsMeta" = true; # MacOSでOptionキーをMetaキーとして使用する
 
         # GitHub Copilot: 有効化/無効化
         "github.copilot.enable" = {
