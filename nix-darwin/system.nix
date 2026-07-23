@@ -59,11 +59,6 @@ in
         "${apps.local}/Brave Browser.app"
         "${apps.hm}/Visual Studio Code.app"
         "${apps.hm}/WezTerm.app"
-        "${apps.local}/traQ.app"
-      ];
-      persistent-others = [
-        # ドックの後半に表示する項目（仕切り線の後ろ）
-        "${apps.sys}/Utilities/Activity Monitor.app"
       ];
     };
     # 画面キャプチャ
