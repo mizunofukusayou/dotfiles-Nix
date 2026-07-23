@@ -80,6 +80,11 @@
           version = "2.11.0";
           sha256 = "sha256-a62ybp0hctBOQo/f8iXFpCcv5o63tN4l4d5wvhZ+hEU";
         })
+
+        # ==========================================
+        # 言語サポート: Typst
+        # ==========================================
+        myriad-dreamin.tinymist
       ];
 
       userSettings = {
@@ -195,6 +200,15 @@
 
         # hediet.vscode-drawioの設定
         "hediet.vscode-drawio.resizeImages" = null; # Draw.ioで画像をリサイズする際のデフォルトの幅と高さを指定する
+
+        # ==========================================
+        # Typst
+        # ==========================================
+        "[typst]" = {
+          "editor.defaultFormatter" = "myriad-dreamin.tinymist"; # `myriad-dreamin.tinymist`をフォーマッターに
+        };
+        "tinymist.lint.when" = "onType"; # Linterの実行タイミング
+        "tinymist.preview.invertColors" = "always"; # プレビューの背景色を反転させる
       };
     };
   };
