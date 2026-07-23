@@ -48,10 +48,13 @@ in
     };
     # Dock
     dock = {
-      orientation = "left"; # ドックの位置を左に設定
+      autohide = true; # ドックを自動的に隠す
+      autohide-delay = 0.0; # マウスを近づけてから表示されるまでの遅延をゼロにする
+      autohide-time-modifier = 0.2; # アニメーションの時間を短縮する
+      orientation = "right"; # ドックの位置を右に設定
       show-recents = false; # 最近使ったアプリを非表示
       tilesize = 64; # ドックのサイズを設定
-      magnification = true; # ドックの拡大を有効化
+      magnification = false; # ドックの拡大を無効化
       largesize = 128; # ドックの拡大サイズを設定
       minimize-to-application = true; # ウィンドウをアプリケーションアイコンに格納
       persistent-apps = [
