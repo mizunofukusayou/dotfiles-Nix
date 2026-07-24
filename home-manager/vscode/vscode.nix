@@ -141,6 +141,11 @@
 
         "prettier.tabWidth" = 4; # インデントをスペース4つに
 
+        # コードブロック内のインデントに色をつけないようにする
+        "indentRainbow.ignoreErrorLanguages" = [
+          "typst"
+        ];
+
         "[c][cpp]"."editor.defaultFormatter" = "ms-vscode.cpptools"; # C/C++ファイルのデフォルトフォーマッタを設定
         "C_Cpp.clang_format_style" =
           "{"
@@ -206,6 +211,7 @@
         # ==========================================
         "[typst]" = {
           "editor.defaultFormatter" = "myriad-dreamin.tinymist"; # `myriad-dreamin.tinymist`をフォーマッターに
+
         };
         "tinymist.lint.when" = "onType"; # Linterの実行タイミング
         "tinymist.preview.invertColors" = "always"; # プレビューの背景色を反転させる
