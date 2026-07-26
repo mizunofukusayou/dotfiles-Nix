@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.shellAliases = {
     repo = "typst-report-compile";
@@ -12,6 +12,8 @@
         pkgs.coreutils
       ];
       text = ''
+        export TYPST_PACKAGE_PATH="${config.xdg.dataHome}/typst/packages"
+        export TYPST_PACKAGE_CACHE_PATH="${config.xdg.cacheHome}/typst/packages"
         if [[ $# -eq 0 ]]; then
           echo "使い方: $(basename "$0") <file.typ>" >&2
           exit 1
@@ -31,7 +33,7 @@
           name="$base"
         fi
 
-        output_dir="$HOME/univ/tmp"
+        output_dir="$HOME/univ/typst-output"
         mkdir -p "''$output_dir"
         output_file="''${output_dir}/''${title_prefix}_''${name}.pdf"
 

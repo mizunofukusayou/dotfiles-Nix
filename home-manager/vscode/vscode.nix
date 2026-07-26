@@ -211,10 +211,16 @@
         # ==========================================
         "[typst]" = {
           "editor.defaultFormatter" = "myriad-dreamin.tinymist"; # `myriad-dreamin.tinymist`をフォーマッターに
-
         };
         "tinymist.lint.when" = "onType"; # Linterの実行タイミング
         "tinymist.preview.invertColors" = "always"; # プレビューの背景色を反転させる
+        "tinymist.typstExtraArgs" = [
+          "--package-path"
+          "${config.xdg.dataHome}/typst/packages"
+
+          "--package-cache-path"
+          "${config.xdg.cacheHome}/typst/packages"
+        ];
       };
     };
   };
