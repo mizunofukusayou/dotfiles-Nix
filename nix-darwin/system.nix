@@ -75,6 +75,9 @@ in
       Dragging = true; # ドラッグを有効化
       FirstClickThreshold = 0; # クリックの固さを設定
     };
+
+    hitoolbox.AppleFnUsageType = "Do Nothing"; # Fnキーを押したときの動作を「何もしない」に設定
+
     # その他
     CustomUserPreferences = {
       NSGlobalDomain = {
