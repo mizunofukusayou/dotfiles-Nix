@@ -26,16 +26,18 @@
         abc = "0x700000091";
         backspace = "0x70000002A";
         rightArrow = "0x70000004F";
+        option = "0x7000000E2";
+        escape = "0x700000029";
       in
       [
         # Caps Lock -> Left Command
         (mkKeyMapping capsLock leftCommand)
-        # Left Command -> ABC
-        (mkKeyMapping leftCommand abc)
+        # Left Command -> Esc
+        (mkKeyMapping leftCommand escape)
         # ABC -> Backspace
         (mkKeyMapping abc backspace)
-        # Right Command -> Kana
-        (mkKeyMapping rightCommand kana)
+        # Right Command -> Option
+        (mkKeyMapping rightCommand option)
         # Kana -> Right Arrow
         (mkKeyMapping kana rightArrow)
       ];
