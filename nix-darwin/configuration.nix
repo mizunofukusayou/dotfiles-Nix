@@ -8,7 +8,7 @@
     ./modules/env.nix
 
     ./system.nix
-    ./keymap.nix
+    # ./keymap.nix
     ./home_manager.nix
     ./homebrew.nix
   ];
