@@ -9,7 +9,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
     JAVA_HOME = "${pkgs.temurin-bin.home}";
     MATLAB_JAVA = "$JAVA_HOME";
   };
