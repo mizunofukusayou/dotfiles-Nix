@@ -14,6 +14,11 @@
     };
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -22,6 +27,7 @@
       home-manager,
       nix-darwin,
       nix-homebrew,
+      nixvim,
       ...
     }:
     let
@@ -39,6 +45,11 @@
           ./nix-darwin/configuration.nix
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
+          {
+            home-manager.sharedModules = [
+              nixvim.homeManagerModules.nixvim
+            ];
+          }
         ];
       };
     };
