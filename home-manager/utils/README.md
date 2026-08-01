@@ -8,5 +8,5 @@
 ```bash
 mkdir -p ~/.config/snippets
 cp home-manager/utils/snippets.template.jsonl ~/.config/snippets/snippets.jsonl
-ln -s ~/.config/snippets/snippets.jsonl home-manager/utils/snippets.jsonl
+ln -s ~/.local/share/snippets/snippets.jsonl home-manager/utils/snippets.jsonl
 ```
