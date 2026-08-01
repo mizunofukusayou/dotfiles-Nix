@@ -13,6 +13,10 @@ in
   system.primaryUser = config.myEnv.name; # Macのユーザー設定を変更する際に必要
 
   security.pam.services.sudo_local.touchIdAuth = true; # タッチIDでsudoを許可する
+  security.sudo.extraConfig = ''
+    # sudo の認証キャッシュ有効期限を60分に延長する
+    Defaults timestamp_timeout=60
+  '';
 
   system.defaults = {
     NSGlobalDomain = {
