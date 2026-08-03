@@ -1,4 +1,4 @@
-{ config, nix-homebrew, ... }:
+{ config, ... }:
 {
   nix-homebrew = {
     enable = true;
@@ -16,6 +16,13 @@
 
     casks = [
       "logi-options+"
+      "brave-browser"
+      "arc"
+      "appcleaner"
+      "claude"
+      "slack"
+      "obsidian"
+      "zoom"
     ];
   };
 }
