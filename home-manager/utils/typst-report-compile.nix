@@ -1,4 +1,12 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+let
+  output_dir = "${config.home.homeDirectory}/univ/typst-output";
+in
 {
   home.shellAliases = {
     repo = "typst-report-compile";
@@ -33,7 +41,7 @@
           name="$base"
         fi
 
-        output_dir="$HOME/univ/typst-output"
+        output_dir=${output_dir}
         mkdir -p "''$output_dir"
         output_file="''${output_dir}/''${title_prefix}_''${name}.pdf"
 
@@ -41,4 +49,43 @@
       '';
     })
   ];
+
+  # 3:00に`output_dir`にあるファイルを削除する
+  launchd.agents.cleanup-typst-output = lib.mkIf pkgs.stdenv.isDarwin {
+    enable = true;
+    config = {
+      ProgramArguments = [
+        "${pkgs.fd}/bin/fd"
+        "--max-depth"
+        "1"
+        "--hidden"
+        "--no-ignore"
+        "."
+        output_dir
+        "-X"
+        "rm"
+        "-rf"
+      ];
+      StartCalendarInterval = [
+        {
+          Hour = 3;
+          Minute = 0;
+        }
+      ];
+    };
+  };
+
+  systemd.user.services.cleanup-typst-output = lib.mkIf pkgs.stdenv.isLinux {
+    Unit.Description = "Cleanup typst output directory contents";
+    Service.ExecStart = "${pkgs.fd}/bin/fd --max-depth 1 --hidden --no-ignore .${output_dir} -X rm -rf";
+  };
+
+  systemd.user.timers.cleanup-typst-output = lib.mkIf pkgs.stdenv.isLinux {
+    Unit.Description = "Clean typst output daily at 3am";
+    Timer = {
+      OnCalendar = "*-*-* 03:00:00";
+      Persistent = true;
+    };
+    Install.WantedBy = [ "timers.target" ];
+  };
 }
