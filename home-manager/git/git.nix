@@ -23,11 +23,22 @@
 
       log.date = "iso"; # git log の日時フォーマットを直感的な ISO 形式（YYYY-MM-DD）にする
       push.autoSetupRemote = true; # 新しいブランチの初回 push 時に --set-upstream を自動で行う
+
+      alias = {
+        aa = "add .";
+        an = "add -N .";
+        cm = "commit -m";
+        st = "status -sb";
+      };
     };
 
     ignores = [
       ".DS_Store"
       "*.swp"
     ];
+  };
+
+  home.shellAliases = {
+    gsw = "git branch | fzf | xargs git switch";
   };
 }
