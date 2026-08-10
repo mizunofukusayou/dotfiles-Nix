@@ -15,7 +15,7 @@
     # Ctrl+T (ファイル検索ウィジェット) の設定
     fileWidgetCommand = "fd --type f --hidden --exclude .git";
     fileWidgetOptions = [
-      "--preview 'cat {}'"
+      "--preview 'bat --color=always {}'"
     ];
 
     # Alt+C (ディレクトリ移動ウィジェット) の設定
