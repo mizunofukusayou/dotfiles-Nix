@@ -13,7 +13,9 @@ return {
             "--completion-style=detailed",
             "--function-arg-placeholders",
             "--fallback-style=llvm",
-            "-Iinclude", -- プロジェクトルートの include ディレクトリを追加
+          },
+          init_options = {
+            fallbackFlags = { "-Iinclude" },
           },
         },
       },
