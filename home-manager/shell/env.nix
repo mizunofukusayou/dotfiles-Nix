@@ -19,6 +19,7 @@
       dr = "defaults read";
       yy = "pbcopy";
       diff = "code -d";
+      github = "gh repo view -w";
     };
   };
 }
