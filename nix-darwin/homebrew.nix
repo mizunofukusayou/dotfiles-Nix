@@ -25,6 +25,7 @@
       "zoom"
       "steam"
       "raycast"
+      "alt-tab"
     ];
   };
 }
