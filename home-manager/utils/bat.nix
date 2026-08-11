@@ -23,4 +23,8 @@
       style = "numbers,changes,header";
     };
   };
+
+  home.shellAliases = {
+    man = "batman";
+  };
 }
