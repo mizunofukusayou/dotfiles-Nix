@@ -20,6 +20,7 @@
       yy = "pbcopy";
       diff = "code -d";
       github = "gh repo view -w";
+      cornix = "open ~/dev/github.com/mizunofukusayou/keymap/cornix/layout.pdf";
     };
   };
 }
