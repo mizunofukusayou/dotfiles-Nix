@@ -22,7 +22,6 @@
       "claude"
       "slack"
       "obsidian"
-      "zoom"
       "steam"
       "raycast"
       "alt-tab"
