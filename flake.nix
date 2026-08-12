@@ -25,9 +25,6 @@
     }:
     {
       darwinConfigurations."mizunofukusayounoMacBook-Air" = nix-darwin.lib.darwinSystem {
-        specialArgs = {
-          inherit nix-homebrew;
-        };
         modules = [
           ./nix-darwin/configuration.nix
           home-manager.darwinModules.home-manager
