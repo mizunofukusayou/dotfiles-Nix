@@ -18,16 +18,11 @@
 
   outputs =
     {
-      nixpkgs,
       home-manager,
       nix-darwin,
       nix-homebrew,
       ...
     }:
-    let
-      system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
     {
       darwinConfigurations."mizunofukusayounoMacBook-Air" = nix-darwin.lib.darwinSystem {
         specialArgs = {
