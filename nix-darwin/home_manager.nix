@@ -1,6 +1,10 @@
-{ config, ... }:
+{ userName, ... }:
 {
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.users.${config.myEnv.name} = ../home-manager/home.nix;
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.${userName} = ../home-manager/home.nix;
+    extraSpecialArgs = { inherit userName; };
+  };
+  users.users.${userName}.home = "/Users/${userName}";
 }

@@ -23,13 +23,23 @@
       nix-homebrew,
       ...
     }:
-    {
-      darwinConfigurations."mizunofukusayounoMacBook-Air" = nix-darwin.lib.darwinSystem {
-        modules = [
-          ./nix-darwin/configuration.nix
-          home-manager.darwinModules.home-manager
-          nix-homebrew.darwinModules.nix-homebrew
-        ];
+    let
+      darwinHosts = {
+        "mizunofukusayounoMacBook-Air" = "mizunofukusayou";
+        "mizufukunoMacBook-Air" = "mizufuku";
       };
+    in
+    {
+      darwinConfigurations = builtins.mapAttrs (
+        hostname: userName:
+        nix-darwin.lib.darwinSystem {
+          specialArgs = { inherit userName; };
+          modules = [
+            ./nix-darwin/configuration.nix
+            home-manager.darwinModules.home-manager
+            nix-homebrew.darwinModules.nix-homebrew
+          ];
+        }
+      ) darwinHosts;
     };
 }

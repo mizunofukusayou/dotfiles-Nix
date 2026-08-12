@@ -1,6 +1,6 @@
-{ config, ... }:
+{ config, userName, ... }:
 let
-  homeDir = config.users.users.${config.myEnv.name}.home;
+  homeDir = config.users.users.${userName}.home;
 
   apps = {
     sys = "/System/Applications";
@@ -19,7 +19,7 @@ in
   };
 
   system = {
-    primaryUser = config.myEnv.name; # Macのユーザー設定を変更する際に必要
+    primaryUser = userName; # Macのユーザー設定を変更する際に必要
 
     defaults = {
       NSGlobalDomain = {

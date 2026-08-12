@@ -1,8 +1,8 @@
-{ config, ... }:
+{ userName, ... }:
 {
   nix-homebrew = {
     enable = true;
-    user = config.myEnv.name;
+    user = userName;
   };
 
   homebrew = {

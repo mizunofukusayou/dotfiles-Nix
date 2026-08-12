@@ -1,5 +1,5 @@
 # 環境変数、パスの追加、エイリアスなど、シェルの環境をカスタマイズする
-{ pkgs, ... }:
+{ pkgs, userName, ... }:
 {
   xdg.enable = true;
 
@@ -20,7 +20,7 @@
       yy = "pbcopy";
       diff = "code -d";
       github = "gh repo view -w";
-      cornix = "open ~/dev/github.com/mizunofukusayou/keymap/cornix/layout.pdf";
+      cornix = "open ~/dev/github.com/${userName}/keymap/cornix/layout.pdf";
     };
   };
 }
