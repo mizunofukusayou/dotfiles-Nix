@@ -29,8 +29,6 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      formatter.${system} = pkgs.nixfmt-tree;
-
       darwinConfigurations."mizunofukusayounoMacBook-Air" = nix-darwin.lib.darwinSystem {
         specialArgs = {
           inherit nix-homebrew;
