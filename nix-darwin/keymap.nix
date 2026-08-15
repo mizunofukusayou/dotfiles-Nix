@@ -49,6 +49,20 @@ in
 {
   system.keyboard.enableKeyMapping = false;
 
+  launchd.user.agents.keymap = {
+    serviceConfig = {
+      ProgramArguments = [
+        "/usr/bin/hidutil"
+        "property"
+        "--matching"
+        matching
+        "--set"
+        mapping
+      ];
+      RunAtLoad = true;
+    };
+  };
+
   system.activationScripts.postActivation.text = ''
     echo "configuring keyboard (internal keyboard only)..." >&2
     /usr/bin/hidutil property \
