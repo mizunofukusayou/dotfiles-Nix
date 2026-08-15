@@ -19,6 +19,9 @@ Nixパッケージマネージャをインストールします。
 curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install
 ```
 
+> [!NOTE]
+> `Enable flakes?`に対して`y`を選択
+
 インストール完了後、Nixのコマンドを現在のシェルで使えるようにするためにパスを通します（インストール時に表示されたコマンドを実行してください）。
 
 ```bash
@@ -62,3 +65,12 @@ task switch
 ```
 
 最後にMacを再起動することで、すべてのシステム設定が完全に反映されます。
+
+## 6. その後にやること
+
+### Githubのsshを設定する
+
+```bash
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_github
+pbcopy < ~/.ssh/id_ed25519_github.pub
+```
