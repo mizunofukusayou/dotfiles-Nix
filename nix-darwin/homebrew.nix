@@ -25,6 +25,7 @@
       "steam"
       "raycast"
       "alt-tab"
+      "betterdisplay"
     ];
   };
 }
