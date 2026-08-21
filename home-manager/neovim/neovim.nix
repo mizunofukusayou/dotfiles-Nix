@@ -26,6 +26,7 @@
       ripgrep # 高速テキスト検索 (LazyVimの全体検索等に必須)
       fd # 高速ファイル検索 (LazyVimのファイル検索等に必須)
       tree-sitter # 文法ハイライトパーサー用 CLI (tree-sitter-cli)
+      lldb
     ];
   };
 

@@ -15,7 +15,7 @@ return {
             "--fallback-style=llvm",
           },
           init_options = {
-            fallbackFlags = { "-Iinclude" },
+            fallbackFlags = { "-std=c++23", "-Iinclude" },
           },
         },
       },
