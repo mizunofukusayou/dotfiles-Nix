@@ -21,7 +21,6 @@
       lua-language-server # Lua (lua_ls)
       nil # Nix
       clang-tools # C / C++ (clangd)
-      marksman # Markdown
 
       # その他
       ripgrep # 高速テキスト検索 (LazyVimの全体検索等に必須)
