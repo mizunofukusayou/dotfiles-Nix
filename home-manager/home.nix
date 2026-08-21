@@ -28,5 +28,10 @@
     nixfmt
   ];
 
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 7d";
+  };
+
   programs.home-manager.enable = true;
 }

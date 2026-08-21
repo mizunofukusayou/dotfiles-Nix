@@ -25,5 +25,5 @@ tasks:
   clean:
     desc: Clean up old generations and GC
     cmds:
-      - cmd: nix-collect-garbage --delete-older-than 30d
-      - cmd: sudo nix-collect-garbage --delete-older-than 30d
+      - cmd: nix-collect-garbage -d
+      - cmd: sudo nix-collect-garbage -d
