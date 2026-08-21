@@ -10,10 +10,16 @@ tasks:
       - cmd: sudo darwin-rebuild switch --flake .
         platforms: [darwin/arm64]
 
-  update:
+  pkgsUpdate:
     desc: Update pkgs
     cmds:
       - cmd: nix flake update nixpkgs
+      - cmd: echo "Update complete, run 'task switch' to switch"
+
+  brewUpdate:
+    desc: Update homebrew
+    cmds:
+      - cmd: nix flake update nix-homebrew
       - cmd: echo "Update complete, run 'task switch' to switch"
 
   clean:
