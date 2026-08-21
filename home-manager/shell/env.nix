@@ -21,6 +21,7 @@
       diff = "code -d";
       github = "gh repo view -w";
       cornix = "open ~/dev/github.com/${userName}/keymap/cornix/layout.pdf";
+      t = "task";
     };
   };
 }
