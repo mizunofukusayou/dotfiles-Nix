@@ -161,6 +161,7 @@
           "**/*.out" = true; # コンパイル時に生成される.outファイルを非表示にする
           "**/*.dSYM" = true; # デバッグ時に生成される.dSYMディレクトリを非表示にする
         };
+        "C_Cpp.default.includePath" = [ ".include" ];
 
         "[nix]" = {
           "editor.defaultFormatter" = "jnoortheen.nix-ide"; # Nixファイルのデフォルトフォーマッタを設定
