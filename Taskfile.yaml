@@ -1,6 +1,9 @@
 version: "3"
 
 tasks:
+  default:
+    deps: [switch]
+
   switch:
     desc: Switch environment
     platforms: [linux/amd64, darwin/arm64]
