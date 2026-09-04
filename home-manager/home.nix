@@ -15,15 +15,9 @@
     # Core CLI & Utilities
     tree
     keepassxc # ローカルパスワード管理
-    poppler-utils # pdf関連
 
     # Languages & Toolchains
-    go
     temurin-bin # Java
-
-    # LSPs & Formatters
-    nixd
-    nixfmt
   ];
 
   nix.gc = {
