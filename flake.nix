@@ -18,6 +18,7 @@
 
   outputs =
     {
+      nixpkgs,
       home-manager,
       nix-darwin,
       nix-homebrew,
@@ -28,6 +29,14 @@
         "mizunofukusayounoMacBook-Air" = "mizunofukusayou";
         "mizufukunoMacBook-Air" = "mizufuku";
       };
+
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
     in
     {
       darwinConfigurations = builtins.mapAttrs (
@@ -41,5 +50,13 @@
           ];
         }
       ) darwinHosts;
+
+      devShells = forAllSystems (pkgs: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            go-task
+          ];
+        };
+      });
     };
 }

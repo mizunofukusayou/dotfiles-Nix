@@ -13,11 +13,9 @@
 
   home.packages = with pkgs; [
     # Core CLI & Utilities
-    go-task
     tree
     keepassxc # ローカルパスワード管理
     poppler-utils # pdf関連
-    lefthook
 
     # Languages & Toolchains
     go
