@@ -8,6 +8,7 @@
     ./ghq.nix
     ./pdf2svg.nix
     ./snippets.nix
+    ./tmpls.nix
     ./typst-report-compile.nix
     ./zoxide.nix
   ];
