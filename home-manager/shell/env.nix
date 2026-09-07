@@ -5,7 +5,7 @@
 
   home = {
     language = {
-      base = "en_US.UTF-8";
+      base = "ja_JP.UTF-8";
       ctype = "ja_JP.UTF-8";
     };
 

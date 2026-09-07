@@ -15,6 +15,7 @@
     # Core CLI & Utilities
     tree
     keepassxc # ローカルパスワード管理
+    tldr
 
     # Languages & Toolchains
     temurin-bin # Java
