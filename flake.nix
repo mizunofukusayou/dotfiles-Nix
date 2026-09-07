@@ -18,6 +18,7 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       home-manager,
       nix-darwin,
@@ -42,7 +43,10 @@
       darwinConfigurations = builtins.mapAttrs (
         hostname: userName:
         nix-darwin.lib.darwinSystem {
-          specialArgs = { inherit userName; };
+          specialArgs = {
+            inherit userName;
+            inherit self;
+          };
           modules = [
             ./nix-darwin/configuration.nix
             home-manager.darwinModules.home-manager
