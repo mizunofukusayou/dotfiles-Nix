@@ -23,8 +23,6 @@
       "slack"
       "obsidian"
       "steam"
-      "raycast"
-      "alt-tab"
     ];
   };
 }

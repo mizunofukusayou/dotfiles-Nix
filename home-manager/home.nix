@@ -2,6 +2,7 @@
 {
   imports = [
     ./git/git.nix
+    ./hotkey/hotkey.nix
     ./neovim/neovim.nix
     ./vscode/vscode.nix
     ./shell/shell.nix
