@@ -27,6 +27,7 @@
       alias = {
         aa = "add .";
         an = "add -N .";
+        c = "commit";
         cm = "commit -m";
         st = "status -sb";
       };
