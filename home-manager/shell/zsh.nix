@@ -3,6 +3,8 @@
   programs.zsh = {
     enable = true;
 
+    defaultKeymap = "viins";
+
     enableCompletion = true; # 補完を有効にする
     syntaxHighlighting.enable = true; # シンタックスハイライトを有効にする
     autosuggestion.enable = true; # 入力補完を有効にする
