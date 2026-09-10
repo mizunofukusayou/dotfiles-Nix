@@ -17,9 +17,6 @@
     tree
     keepassxc # ローカルパスワード管理
     tldr
-
-    # Languages & Toolchains
-    temurin-bin # Java
   ];
 
   nix.gc = {

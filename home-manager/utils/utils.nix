@@ -6,6 +6,7 @@
     ./fd.nix
     ./fzf.nix
     ./ghq.nix
+    ./matlab.nix
     ./pdf2svg.nix
     ./snippets.nix
     ./tmpls.nix
